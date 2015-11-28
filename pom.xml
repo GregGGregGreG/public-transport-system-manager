@@ -6,8 +6,12 @@
 
     <groupId>ua.telesens.traineeship</groupId>
     <artifactId>public-transport-system-imitation</artifactId>
+    <packaging>pom</packaging>
     <name>Public transport system imitation</name>
     <description>Public transport system imitation used spring and hibernate</description>
+    <modules>
+        <module>web</module>
+    </modules>
     <version>0.1</version>
 
     <properties>

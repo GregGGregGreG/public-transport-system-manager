@@ -1,6 +1,6 @@
 .big-title-3d {
-    font-size: 100px;
-    margin: 125px auto;
+    font-size: 70px;
+    margin: 57px auto;
     text-align: center;
     color: #fff;
     text-shadow: 0px 1px 1px #ddd,
@@ -19,7 +19,7 @@
 }
 
 .big-title-3d:hover {
-    margin: 122px auto;
+    margin: 54px auto;
     border: 3px solid #cccccc;
     border-radius: 20%;
 }
@@ -42,6 +42,6 @@
 
 #hex-time {
     color: white;
-    font: 64px/64px Lato;
+    font: 50px/50px Lato;
     height: 64px;
 }

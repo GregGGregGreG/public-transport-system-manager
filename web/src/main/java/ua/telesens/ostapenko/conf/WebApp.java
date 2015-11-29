@@ -26,5 +26,4 @@ public class WebApp extends WebMvcConfigurerAdapter {
                 .setCachePeriod(345600);
         registry.addResourceHandler("/favicon.ico").addResourceLocations("/static/images/favicon.ico");
     }
-
 }

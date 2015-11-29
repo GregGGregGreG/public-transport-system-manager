@@ -17,7 +17,7 @@ import java.util.List;
 @Import({
         WebApp.class, ConfigFromTiles.class
 })
-public class ApplicationContext {
+public class WebApplicationContext {
 
     private static final String MESSAGE_SOURCE_BASE_NAME = "i18n/messages";
 

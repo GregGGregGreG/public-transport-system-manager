@@ -11,9 +11,85 @@
 
     <!--HomeController-->
     <definition name="index" extends="common">
-        <put-attribute name="title" value="TEST"/>
+        <put-attribute name="title" value="label.home.page.title"/>
         <put-attribute name="body" value="/WEB-INF/jsp/index.jsp"/>
     </definition>
 
+    <!--&lt;!&ndash;LoginController&ndash;&gt;-->
+    <!--<definition name="login" extends="common">-->
+        <!--<put-attribute name="title" value="label.user.login.page.title"/>-->
+        <!--<put-attribute name="body" value="/WEB-INF/jsp/user-login.jsp"/>-->
+        <!--<put-list-attribute name="stylesheets">-->
+            <!--<add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />-->
+            <!--<add-attribute value="/static/css/app.css" />-->
+            <!--<add-attribute value="/static/css/login.css" />-->
+            <!--&lt;!&ndash;<add-attribute value="/static/node_modules/font-awesome/font-awesome.min.css" />&ndash;&gt;-->
+        <!--</put-list-attribute>-->
+        <!--<put-list-attribute name="javascripts">-->
+            <!--<add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />-->
+            <!--<add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js" />-->
+            <!--<add-attribute value="../../static/js/login.js" />-->
+        <!--</put-list-attribute>-->
+    <!--</definition>-->
+
+    <!--&lt;!&ndash;JoinController&ndash;&gt;-->
+    <!--<definition name="join" extends="common">-->
+        <!--<put-attribute name="title" value="label.user.join.page.title"/>-->
+        <!--<put-attribute name="body" value="/WEB-INF/jsp/join.jsp"/>-->
+        <!--<put-list-attribute name="stylesheets">-->
+            <!--<add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />-->
+            <!--<add-attribute value="/static/css/app.css" />-->
+            <!--<add-attribute value="/static/css/join.css" />-->
+        <!--</put-list-attribute>-->
+        <!--<put-list-attribute name="javascripts">-->
+            <!--<add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />-->
+            <!--<add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js" />-->
+            <!--<add-attribute value="../../static/node_modules/jquery-validation-1.14.0/jquery.validate.min.js" />-->
+            <!--<add-attribute value="../../static/js/join.js" />-->
+        <!--</put-list-attribute>-->
+    <!--</definition>-->
+
+    <!--&lt;!&ndash;AccountController&ndash;&gt;-->
+    <!--<definition name="account" extends="common">-->
+        <!--<put-attribute name="title" value="label.user.account.page.title"/>-->
+        <!--<put-attribute name="body" value="/WEB-INF/jsp/user-account.jsp"/>-->
+        <!--<put-attribute name="templateItem" value="/WEB-INF/layout/templateTaskList.jsp"/>-->
+        <!--<put-list-attribute name="stylesheets">-->
+            <!--<add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />-->
+            <!--<add-attribute value="/static/css/app.css" />-->
+            <!--<add-attribute value="/static/css/account.css" />-->
+        <!--</put-list-attribute>-->
+        <!--<put-list-attribute name="javascripts">-->
+            <!--<add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />-->
+            <!--<add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js" />-->
+            <!--<add-attribute value="../../static/node_modules/autosize-2.0/dest/autosize.min.js" />-->
+            <!--<add-attribute value="../../static/node_modules/jquery-tmpl-1.4.2/jquery.tmpl.min.js" />-->
+            <!--<add-attribute value="../../static/node_modules/bootstrap.message/bootstrap.message.js" />-->
+            <!--<add-attribute value="../../static/node_modules/jquery-todo-list/jquery.todo-list.js" />-->
+            <!--<add-attribute value="../../static/js/account.js" />-->
+        <!--</put-list-attribute>-->
+    <!--</definition>-->
+
+    <!--&lt;!&ndash;ErrorController&ndash;&gt;-->
+    <!--<definition name="error" extends="common">-->
+        <!--<put-attribute name="title" value="label.default.error.page.title"/>-->
+        <!--<put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>-->
+      <!--</definition>-->
+
+    <!--P404-->
+    <definition name="p404" extends="common">
+        <put-attribute name="header" value=""/>
+        <put-attribute name="title" value="label.404.error.page.title"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/p404.jsp"/>
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />
+            <add-attribute value="/static/css/app.css" />
+            <add-attribute value="/static/css/p404.css" />
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />
+            <add-attribute value="../../static/js/p404.js" />
+        </put-list-attribute>
+    </definition>
 
 </tiles-definitions>

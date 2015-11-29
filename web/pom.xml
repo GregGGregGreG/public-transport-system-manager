@@ -25,9 +25,11 @@
         <!-- /BUILD -->
         <!-- DEPENDENCIES -->
         <!-- Commons-logging -->
+        <!-- Apache Tiles -->
         <!-- Spring Core -->
         <!-- Spring MVC -->
         <cglib-version>2.2.2</cglib-version>
+        <!-- Spring Security -->
         <!-- Servlet API 3.0.1 -->
         <!-- Project Build Source Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,6 +40,16 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
+        </dependency>
+        <!-- Apache Tiles -->
+        <!--View templating framework for Java applications.-->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-jsp</artifactId>
         </dependency>
         <!-- Spring Core -->
         <!--Core utilities used by other modules.
@@ -64,6 +76,23 @@
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>${cglib-version}</version>
+        </dependency>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
         </dependency>
         <!-- Servlet API 3.0.1 -->
         <dependency>

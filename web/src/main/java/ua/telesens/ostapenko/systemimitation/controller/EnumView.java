@@ -14,6 +14,7 @@ public enum EnumView {
     ERROR("error"),
     P404("p404"),
     HOME("/"),
+    INDEX("index"),
     LOGIN("login");
 
     private final String name;

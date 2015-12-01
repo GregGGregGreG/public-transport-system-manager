@@ -26,7 +26,7 @@ public class Initializer implements WebApplicationInitializer {
         log.debug("Configuring Spring root application context");
         // Create the root appcontext
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-        ctx.register(WebApplicationContext.class);
+        ctx.register(WebAppContext.class);
 
         // Manage the lifecycle of the root appcontext
         servletContext.addListener(new ContextLoaderListener(ctx));

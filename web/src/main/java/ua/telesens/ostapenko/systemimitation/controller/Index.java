@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import static ua.telesens.ostapenko.systemimitation.controller.EnumView.redirectTo;
+import static ua.telesens.ostapenko.systemimitation.controller.EnumView.*;
 
 /**
  * @author root
@@ -15,8 +15,10 @@ import static ua.telesens.ostapenko.systemimitation.controller.EnumView.redirect
 @Controller
 public class Index {
 
+    protected static final String VIEW_NAME_INDEX = INDEX.getName();
+
     @RequestMapping(value = "/index")
-    public ModelAndView home() {
+    public ModelAndView index() {
         log.debug("Rendering /index page. --> redirect to \\/: ");
         return new ModelAndView(redirectTo(Home.VIEW_NAME_HOMEPAGE));
     }

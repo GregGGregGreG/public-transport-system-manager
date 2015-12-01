@@ -7,6 +7,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 
+import static ua.telesens.ostapenko.systemimitation.controller.EnumView.*;
+
 /**
  * @author greg
  * @since 27.06.15
@@ -16,7 +18,7 @@ import java.security.Principal;
 @RequestMapping("/login")
 public class Login {
 
-    protected static final String VIEW_NAME_LOGINPAGE = EnumView.LOGIN.getName();
+    protected static final String VIEW_NAME_LOGINPAGE = LOGIN.getName();
 
     @RequestMapping()
     public ModelAndView login(Principal principal) {
@@ -26,6 +28,6 @@ public class Login {
             return new ModelAndView("account");
         }
         log.debug("User not authorized and request redirect to home page.");
-        return new ModelAndView(EnumView.redirectTo(Home.VIEW_NAME_HOMEPAGE));
+        return new ModelAndView(redirectTo(Home.VIEW_NAME_HOMEPAGE));
     }
 }

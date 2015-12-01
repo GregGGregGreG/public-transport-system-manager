@@ -9,6 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.text.MessageFormat;
 
+import static ua.telesens.ostapenko.systemimitation.controller.EnumView.ERROR;
+import static ua.telesens.ostapenko.systemimitation.controller.EnumView.P404;
+
 /**
  * @author greg
  * @since 27.06.15
@@ -17,8 +20,8 @@ import java.text.MessageFormat;
 @Controller
 public class ErrorsHandler {
 
-    protected static final String VIEW_NAME_P404 = EnumView.P404.getName();
-    protected static final String VIEW_NAME_ERROR = EnumView.ERROR.getName();
+    protected static final String VIEW_NAME_P404 = P404.getName();
+    protected static final String VIEW_NAME_ERROR = ERROR.getName();
 
     @RequestMapping(value = "/error/404", method = RequestMethod.GET)
     public ModelAndView show404Page(HttpServletRequest req, ModelAndView modelAndView) {

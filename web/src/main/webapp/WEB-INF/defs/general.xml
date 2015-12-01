@@ -15,22 +15,22 @@
         <put-attribute name="body" value="/WEB-INF/jsp/index.jsp"/>
     </definition>
 
-    <!--&lt;!&ndash;LoginController&ndash;&gt;-->
-    <!--<definition name="login" extends="common">-->
-        <!--<put-attribute name="title" value="label.user.login.page.title"/>-->
-        <!--<put-attribute name="body" value="/WEB-INF/jsp/user-login.jsp"/>-->
-        <!--<put-list-attribute name="stylesheets">-->
-            <!--<add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />-->
-            <!--<add-attribute value="/static/css/app.css" />-->
-            <!--<add-attribute value="/static/css/login.css" />-->
-            <!--&lt;!&ndash;<add-attribute value="/static/node_modules/font-awesome/font-awesome.min.css" />&ndash;&gt;-->
-        <!--</put-list-attribute>-->
-        <!--<put-list-attribute name="javascripts">-->
-            <!--<add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />-->
-            <!--<add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js" />-->
-            <!--<add-attribute value="../../static/js/login.js" />-->
-        <!--</put-list-attribute>-->
-    <!--</definition>-->
+    <!--LoginController-->
+    <definition name="login" extends="common">
+        <put-attribute name="title" value="label.user.login.page.title"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/user-login.jsp"/>
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />
+            <add-attribute value="/static/css/app.css" />
+            <add-attribute value="/static/css/login.css" />
+            <!--<add-attribute value="/static/node_modules/font-awesome/font-awesome.min.css" />-->
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />
+            <add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js" />
+            <add-attribute value="../../static/js/login.js" />
+        </put-list-attribute>
+    </definition>
 
     <!--&lt;!&ndash;JoinController&ndash;&gt;-->
     <!--<definition name="join" extends="common">-->

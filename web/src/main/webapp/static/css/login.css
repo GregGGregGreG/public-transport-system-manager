@@ -19,7 +19,7 @@ body {
 -------------------------------------------------- */
 .form-signin {
     max-width: 320px;
-    margin: 10% auto 1px;
+    margin: 1% auto 1px;
     padding: 15px 20px;
     background: #ffffff;
     border: 0 none;
@@ -71,11 +71,10 @@ a.new-account {
 
 /*---------------HEADINGS------------------------------*/
 .fs-title {
-    font-size: 65px;
+    font-size: 40px;
     text-transform: uppercase;
     color: #2C3E50;
-    margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     letter-spacing: -1px;
     line-height: 1;

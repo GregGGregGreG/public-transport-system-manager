@@ -71,10 +71,10 @@
     <!--</definition>-->
 
     <!--&lt;!&ndash;ErrorController&ndash;&gt;-->
-    <!--<definition name="error" extends="common">-->
-        <!--<put-attribute name="title" value="label.default.error.page.title"/>-->
-        <!--<put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>-->
-      <!--</definition>-->
+    <definition name="error" extends="common">
+        <put-attribute name="title" value="label.default.error.page.title"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>
+      </definition>
 
     <!--P404-->
     <definition name="p404" extends="common">

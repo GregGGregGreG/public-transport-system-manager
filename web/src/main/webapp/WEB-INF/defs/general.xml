@@ -70,11 +70,17 @@
         <!--</put-list-attribute>-->
     <!--</definition>-->
 
-    <!--&lt;!&ndash;ErrorController&ndash;&gt;-->
+    <!--ErrorController-->
     <definition name="error" extends="common">
+        <put-attribute name="header" value=""/>
         <put-attribute name="title" value="label.default.error.page.title"/>
         <put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>
-      </definition>
+        <put-attribute name="javascripts" value=""/>
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />
+            <add-attribute value="/static/css/app.css" />
+        </put-list-attribute>
+    </definition>
 
     <!--P404-->
     <definition name="p404" extends="common">

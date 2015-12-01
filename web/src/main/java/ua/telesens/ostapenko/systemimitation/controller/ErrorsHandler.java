@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.MessageFormat;
 
 /**
  * @author greg
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Slf4j
 @Controller
-public class ErrorController {
+public class ErrorsHandler {
 
     @RequestMapping(value = "/error/404", method = RequestMethod.GET)
     public ModelAndView show404Page(HttpServletRequest req, ModelAndView modelAndView) {
@@ -29,4 +30,20 @@ public class ErrorController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/error", method = RequestMethod.GET)
+    public ModelAndView showError(HttpServletRequest req, ModelAndView model) {
+        log.debug("Rendering error page");
+
+        final Integer statusCode = (Integer) req.getAttribute("javax.servlet.error.status_code");
+        String requestUri = (String) req.getAttribute("javax.servlet.error.request_uri");
+        if (requestUri == null) {
+            requestUri = "Unknown";
+        }
+        // create a message to be sent back via the model object.
+        final String message = MessageFormat.format("{0} returned for {1}", statusCode, requestUri);
+
+        model.addObject("errorMessage", message);
+        model.setViewName("error");
+        return model;
+    }
 }

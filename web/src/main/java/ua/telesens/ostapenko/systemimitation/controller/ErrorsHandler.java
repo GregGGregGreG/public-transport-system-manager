@@ -17,6 +17,9 @@ import java.text.MessageFormat;
 @Controller
 public class ErrorsHandler {
 
+    protected static final String VIEW_NAME_P404 = EnumView.P404.getName();
+    protected static final String VIEW_NAME_ERROR = EnumView.ERROR.getName();
+
     @RequestMapping(value = "/error/404", method = RequestMethod.GET)
     public ModelAndView show404Page(HttpServletRequest req, ModelAndView modelAndView) {
         log.debug("Rendering 404 page");
@@ -26,7 +29,7 @@ public class ErrorsHandler {
         }
 
         modelAndView.addObject("errorUrl", requestUri);
-        modelAndView.setViewName("p404");
+        modelAndView.setViewName(VIEW_NAME_P404);
         return modelAndView;
     }
 
@@ -43,7 +46,7 @@ public class ErrorsHandler {
         final String message = MessageFormat.format("{0} returned for {1}", statusCode, requestUri);
 
         model.addObject("errorMessage", message);
-        model.setViewName("error");
+        model.setViewName(VIEW_NAME_ERROR);
         return model;
     }
 }

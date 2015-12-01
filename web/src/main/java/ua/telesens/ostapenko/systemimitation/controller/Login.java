@@ -8,12 +8,15 @@ import org.springframework.web.servlet.ModelAndView;
 import java.security.Principal;
 
 /**
- * Created by greg on 27.06.15.
+ * @author greg
+ * @since 27.06.15
  */
 @Slf4j
 @Controller
 @RequestMapping("/login")
 public class Login {
+
+    protected static final String VIEW_NAME_LOGINPAGE = EnumView.LOGIN.getName();
 
     @RequestMapping()
     public ModelAndView login(Principal principal) {
@@ -22,6 +25,7 @@ public class Login {
             log.debug("User already authorized and request redirect to account page.");
             return new ModelAndView("account");
         }
-        return new ModelAndView("login");
+        log.debug("User not authorized and request redirect to home page.");
+        return new ModelAndView(EnumView.redirectTo(Home.VIEW_NAME_HOMEPAGE));
     }
 }

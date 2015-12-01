@@ -5,20 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import static ua.telesens.ostapenko.systemimitation.controller.EnumView.*;
-
 /**
  * @author root
- * @since 01.12.15
+ * @since 29.11.15
  */
 @Slf4j
 @Controller
-@RequestMapping({"/index"})
-public class Index {
+public class Home {
 
-    @RequestMapping()
+    protected static final String VIEW_NAME_HOMEPAGE = EnumView.HOME.getName();
+
+    @RequestMapping({"/"})
     public ModelAndView home() {
-        log.debug("Rendering /index page. --> redirect to \\/: ");
-        return new ModelAndView(redirectTo(Home.VIEW_NAME_HOMEPAGE));
+        log.debug("Rendering home page and redirect to login page");
+        return new ModelAndView(Login.VIEW_NAME_LOGINPAGE);
     }
 }

@@ -27,6 +27,8 @@
         <!-- Testing Dependencies -->
         <!-- Project Build Source Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--Project Reporting Output Encoding -->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencyManagement>

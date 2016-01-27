@@ -1,24 +1,28 @@
 package ua.telesens.ostapenko.conf;
 
 import lombok.extern.slf4j.Slf4j;
+import org.mortbay.servlet.GzipFilter;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
+import ua.telesens.ostapenko.conf.profiles.DbManagerProfileConfig;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
+import java.util.EnumSet;
 
 /**
  * @author root
  * @since 29.11.15
  */
 @Slf4j
+@PropertySource("classpath:application.properties")
 public class Initializer implements WebApplicationInitializer {
-
     private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
     private static final String DISPATCHER_SERVLET_MAPPING = "/";
+    private static final String DEFAULT_PROFILE = "dbManager";
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
@@ -27,6 +31,12 @@ public class Initializer implements WebApplicationInitializer {
         // Create the root appcontext
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         ctx.register(WebAppContext.class);
+        //Register profiles
+        ctx.register(DbManagerProfileConfig.class);
+
+        ctx.register(WebSecurityConfig.class);
+//        Set Profile
+        ctx.getEnvironment().setDefaultProfiles(DEFAULT_PROFILE);
 
         // Manage the lifecycle of the root appcontext
         servletContext.addListener(new ContextLoaderListener(ctx));
@@ -39,8 +49,22 @@ public class Initializer implements WebApplicationInitializer {
         servlet.addMapping(DISPATCHER_SERVLET_MAPPING);
         servlet.setLoadOnStartup(1);
 
+        FilterRegistration.Dynamic filter = servletContext.addFilter("openEntityManagerInViewFilter", OpenEntityManagerInViewFilter.class);
+        filter.setInitParameter("singleSession", "true");
+        filter.addMappingForServletNames(null, true, "dispatcher");
+
+        log.debug("Registering GZip Filter");
+        EnumSet<DispatcherType> dispatcherTypes = EnumSet
+                .of(DispatcherType.REQUEST);
+        FilterRegistration.Dynamic characterEncodingFilter = servletContext
+                .addFilter("GzipFilter", new GzipFilter());
+        characterEncodingFilter
+                .setInitParameter(
+                        "mimeTypes",
+                        "text/html,text/plain,text/xml,application/xhtml+xml,text/css,application/javascript,application/json,application/x-javascript,image/svg+xml");
+        characterEncodingFilter.addMappingForUrlPatterns(dispatcherTypes, true,
+                "/*");
 
         log.debug("Web application fully configured");
-
     }
 }

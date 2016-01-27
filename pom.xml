@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ua.telesens.traineeship</groupId>
-    <artifactId>public-transport-system-imitation</artifactId>
+    <artifactId>public-transport-system-manager</artifactId>
     <packaging>pom</packaging>
-    <name>Public transport system imitation</name>
-    <description>Public transport system imitation used spring and hibernate</description>
+    <name>Public transport system manager</name>
+    <description>Public transport system manager used spring and hibernate</description>
     <modules>
         <module>web</module>
         <module>manager</module>

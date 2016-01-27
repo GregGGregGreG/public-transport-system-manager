@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>public-transport-system-imitation</artifactId>
+        <artifactId>public-transport-system-manager</artifactId>
         <groupId>ua.telesens.traineeship</groupId>
         <version>0.1</version>
     </parent>
@@ -32,6 +32,13 @@
         <!-- Servlet API 3.0.1 -->
         <!-- Project Build Source Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.postgresql-version>9.4-1201-jdbc4</org.postgresql-version>
+
+        <!-- Gzip filter -->
+        <org.mortbay.jetty-util-version>6.1.25</org.mortbay.jetty-util-version>
+
+        <asm-version>3.3.1</asm-version>
+
         <!--Project Reporting Output Encoding -->
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -95,6 +102,42 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
+        <!-- Spring Data JPA -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+        <!-- JSR 303 with Hibernate Validator -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!-- asm allows hibernate validator to retrieve method parameter names when reporting method validation
+        without this you just get arg0 instead of argument name -->
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>${asm-version}</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.glassfish.web</groupId>-->
+        <!--<artifactId>el-impl</artifactId>-->
+        <!--<version>2.2</version>-->
+        <!--</dependency>-->
+
         <!-- Servlet API 3.0.1 -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -109,6 +152,28 @@
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <!-- Commons Database Connection Pool-->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+        </dependency>
+        <!-- HSQL Database -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+        </dependency>
+        <!-- POSTGRESQL Database -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${org.postgresql-version}</version>
+        </dependency>
+        <!-- Gzip filter -->
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>${org.mortbay.jetty-util-version}</version>
         </dependency>
     </dependencies>
     <build>

@@ -16,7 +16,8 @@ public enum EnumView {
     HOME("/", "/"),
     INDEX("index", "/index"),
     LOGIN("login", "/login"),
-    ACCOUNT("account", "/account");
+    ACCOUNT("account", "/account"),
+    JOIN("join", "/join");
 
     private final String name;
     private final String path;

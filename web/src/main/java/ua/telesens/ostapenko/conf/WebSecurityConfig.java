@@ -38,17 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         BCryptPasswordEncoder encoder = passwordEncoder();
-//        auth.jdbcAuthentication()
-//                .dataSource(dataSource)
-//                .passwordEncoder(encoder)
-//                .usersByUsernameQuery(
-//                        "select email,password,enabled from app_user where email = ?")
-//                .authoritiesByUsernameQuery(
-//                        "select app_user.email, role.name from app_user " +
-//                                "join app_user_roles on app_user.id = app_user_roles.users " +
-//                                "join role on app_user_roles.roles=role.id " +
-//                                "where app_user.email = ?");
-
         auth
                 .userDetailsService(findByEmail)
                 .passwordEncoder(encoder)
@@ -79,7 +68,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cacheControl()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/join/**", "/signup_check/**", "/static/**","/favicon.ico").permitAll()
+                .antMatchers(
+                        "/join/**",
+                        "/signup_check/**",
+                        "/static/**",
+                        "/favicon.ico"
+                ).permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

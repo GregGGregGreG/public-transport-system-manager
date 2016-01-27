@@ -32,22 +32,22 @@
         </put-list-attribute>
     </definition>
 
-    <!--&lt;!&ndash;JoinController&ndash;&gt;-->
-    <!--<definition name="join" extends="common">-->
-        <!--<put-attribute name="title" value="label.user.join.page.title"/>-->
-        <!--<put-attribute name="body" value="/WEB-INF/jsp/join.jsp"/>-->
-        <!--<put-list-attribute name="stylesheets">-->
-            <!--<add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />-->
-            <!--<add-attribute value="/static/css/app.css" />-->
-            <!--<add-attribute value="/static/css/join.css" />-->
-        <!--</put-list-attribute>-->
-        <!--<put-list-attribute name="javascripts">-->
-            <!--<add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />-->
-            <!--<add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js" />-->
-            <!--<add-attribute value="../../static/node_modules/jquery-validation-1.14.0/jquery.validate.min.js" />-->
-            <!--<add-attribute value="../../static/js/join.js" />-->
-        <!--</put-list-attribute>-->
-    <!--</definition>-->
+    <!--JoinController-->
+    <definition name="join" extends="common">
+        <put-attribute name="title" value="label.user.join.page.title"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/join.jsp"/>
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css" />
+            <add-attribute value="/static/css/app.css" />
+            <add-attribute value="/static/css/join.css" />
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js" />
+            <add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js" />
+            <add-attribute value="../../static/node_modules/jquery-validation-1.14.0/jquery.validate.min.js" />
+            <add-attribute value="../../static/js/join.js" />
+        </put-list-attribute>
+    </definition>
 
     <!--AccountController-->
     <definition name="account" extends="common">
@@ -71,7 +71,7 @@
 
     <!--ErrorController-->
     <definition name="error" extends="common">
-        <put-attribute name="header" value=""/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
         <put-attribute name="title" value="label.default.error.page.title"/>
         <put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>
         <put-attribute name="javascripts" value=""/>

@@ -3,9 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-<div class="alert alert-danger">
-    <p>
-        <c:out value="${errorMessage}" />
-    </p>
-    <p><spring:message code="label.default.error.page.text"/></p>
+<div class="container">
+    <div class="alert alert-danger">
+        <p>
+            <c:out value="${errorMessage}" />
+        </p>
+        <p><spring:message code="label.default.error.page.text"/></p>
+    </div>
 </div>

@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import java.util.UUID;
 
 /**
  * @author root
@@ -16,5 +15,5 @@ import java.util.UUID;
 public class AbstractEntity {
     @Id
     @GeneratedValue
-    private UUID id;
+    private Integer id;
 }

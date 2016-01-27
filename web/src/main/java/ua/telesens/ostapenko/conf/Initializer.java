@@ -2,7 +2,6 @@ package ua.telesens.ostapenko.conf;
 
 import lombok.extern.slf4j.Slf4j;
 import org.mortbay.servlet.GzipFilter;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -18,11 +17,11 @@ import java.util.EnumSet;
  * @since 29.11.15
  */
 @Slf4j
-@PropertySource("classpath:application.properties")
 public class Initializer implements WebApplicationInitializer {
     private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
     private static final String DISPATCHER_SERVLET_MAPPING = "/";
     private static final String DEFAULT_PROFILE = "dbManager";
+
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
@@ -30,7 +29,7 @@ public class Initializer implements WebApplicationInitializer {
         log.debug("Configuring Spring root application context");
         // Create the root appcontext
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-        ctx.register(WebAppContext.class);
+        ctx.register(WebAppConfig.class);
         //Register profiles
         ctx.register(DbManagerProfileConfig.class);
 
@@ -48,6 +47,7 @@ public class Initializer implements WebApplicationInitializer {
 
         servlet.addMapping(DISPATCHER_SERVLET_MAPPING);
         servlet.setLoadOnStartup(1);
+        servlet.setInitParameter("throwExceptionIfNoHandlerFound", "true");
 
         FilterRegistration.Dynamic filter = servletContext.addFilter("openEntityManagerInViewFilter", OpenEntityManagerInViewFilter.class);
         filter.setInitParameter("singleSession", "true");

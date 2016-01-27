@@ -132,11 +132,11 @@
             <artifactId>asm</artifactId>
             <version>${asm-version}</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.glassfish.web</groupId>-->
-        <!--<artifactId>el-impl</artifactId>-->
-        <!--<version>2.2</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>el-impl</artifactId>
+            <version>2.2</version>
+        </dependency>
 
         <!-- Servlet API 3.0.1 -->
         <dependency>
@@ -168,6 +168,19 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${org.postgresql-version}</version>
+        </dependency>
+        <!-- Jackson JSON Processor -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
         </dependency>
         <!-- Gzip filter -->
         <dependency>

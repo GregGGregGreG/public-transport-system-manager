@@ -45,7 +45,7 @@ public class JoinController {
         log.debug("Rendering registration page.");
         if (principal != null) {
             log.debug("User already authorized and request redirect to account page.");
-            return new ModelAndView(EnumView.redirectTo(EnumView.ACCOUNT));
+            return new ModelAndView(EnumView.redirectTo(EnumView.FIND));
         }
         return new ModelAndView(VIEW_NAME_JOIN);
     }

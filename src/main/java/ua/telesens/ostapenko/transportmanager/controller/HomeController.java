@@ -20,6 +20,6 @@ public class HomeController {
     @RequestMapping(value = "/")
     public ModelAndView home() {
         log.debug("Rendering home page and redirect to login page");
-        return new ModelAndView(redirectTo(AccountController.VIEW_NAME_ACCOUNT));
+        return new ModelAndView(redirectTo(FindController.VIEW_NAME_FIND));
     }
 }

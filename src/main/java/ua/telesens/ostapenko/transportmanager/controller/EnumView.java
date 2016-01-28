@@ -16,7 +16,10 @@ public enum EnumView {
     HOME("/", "/"),
     INDEX("index", "/index"),
     LOGIN("login", "/login"),
-    ACCOUNT("account", "/account"),
+    // Find short way
+    FIND("find", "/find"),
+    ROUTES("routes", "/routes"),
+    STATIONS("stations", "/stations"),
     JOIN("join", "/join");
 
     private final String name;

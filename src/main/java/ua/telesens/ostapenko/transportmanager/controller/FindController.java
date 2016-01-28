@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import static ua.telesens.ostapenko.transportmanager.controller.EnumView.ACCOUNT;
+import static ua.telesens.ostapenko.transportmanager.controller.EnumView.FIND;
 
 /**
  * @author root
@@ -15,19 +15,19 @@ import static ua.telesens.ostapenko.transportmanager.controller.EnumView.ACCOUNT
 
 @Slf4j
 @Controller
-public class AccountController {
+public class FindController {
 
-    protected static final String VIEW_NAME_ACCOUNT = ACCOUNT.getName();
+    protected static final String VIEW_NAME_FIND = FIND.getName();
 
-    @RequestMapping("/account")
+    @RequestMapping("/find")
     public ModelAndView account(Model model) {
-        log.debug("Rendering account page.");
+        log.debug("Rendering find page.");
 
 //        User found = TodoUtils.getCurrentUser();
 //        log.debug("Found user entry {}", found);
 
 //        model.addAttribute("user", TodoUtils.createDtoUser(found));
-        return new ModelAndView(VIEW_NAME_ACCOUNT);
+        return new ModelAndView(VIEW_NAME_FIND);
 
     }
 }

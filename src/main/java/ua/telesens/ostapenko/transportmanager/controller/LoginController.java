@@ -25,7 +25,7 @@ public class LoginController {
         log.debug("Rendering login page.");
         if (principal != null) {
             log.debug("User already authorized and request redirect to account page.");
-            return new ModelAndView(AccountController.VIEW_NAME_ACCOUNT);
+            return new ModelAndView(FindController.VIEW_NAME_FIND);
         }
         log.debug("User not authorized and request redirect to home page.");
         return new ModelAndView(VIEW_NAME_LOGINPAGE);

@@ -17,9 +17,11 @@ public class HomeController {
 
     protected static final String VIEW_NAME_HOMEPAGE = HOME.getName();
 
+
+
     @RequestMapping(value = "/")
     public ModelAndView home() {
         log.debug("Rendering home page and redirect to login page");
-        return new ModelAndView(redirectTo(FindController.VIEW_NAME_FIND));
+        return new ModelAndView(redirectTo(RoutesController.VIEW_NAME_ROUTES));
     }
 }

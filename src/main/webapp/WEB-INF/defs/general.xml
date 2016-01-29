@@ -75,12 +75,12 @@
         <put-list-attribute name="stylesheets">
             <add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css"/>
             <add-attribute value="/static/css/app.css"/>
-            <!--<add-attribute value="/static/css/account.css"/>-->
+            <add-attribute value="/static/css/find.css"/>
         </put-list-attribute>
         <put-list-attribute name="javascripts">
             <add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js"/>
             <add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js"/>
-            <!--<add-attribute value="../../static/js/account.js"/>-->
+            <add-attribute value="../../static/js/find.js"/>
         </put-list-attribute>
     </definition>
 
@@ -91,12 +91,12 @@
         <put-list-attribute name="stylesheets">
             <add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css"/>
             <add-attribute value="/static/css/app.css"/>
-            <!--<add-attribute value="/static/css/account.css"/>-->
+            <add-attribute value="/static/css/routes.css"/>
         </put-list-attribute>
         <put-list-attribute name="javascripts">
             <add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js"/>
             <add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js"/>
-            <!--<add-attribute value="../../static/js/account.js"/>-->
+            <add-attribute value="../../static/js/routes.js"/>
         </put-list-attribute>
     </definition>
 
@@ -107,12 +107,12 @@
         <put-list-attribute name="stylesheets">
             <add-attribute value="/static/node_modules/bootstrap-3.3.4-dist/css/bootstrap.min.css"/>
             <add-attribute value="/static/css/app.css"/>
-            <!--<add-attribute value="/static/css/account.css"/>-->
+            <add-attribute value="/static/css/stations.css"/>
         </put-list-attribute>
         <put-list-attribute name="javascripts">
             <add-attribute value="../../static/node_modules/jquery-2.1.4/dist/jquery-2.1.4.min.js"/>
             <add-attribute value="../../static/node_modules/bootstrap-3.3.4-dist/js/bootstrap.min.js"/>
-            <!--<add-attribute value="../../static/js/account.js"/>-->
+            <!--<add-attribute value="../../static/js/routes.js"/>-->
         </put-list-attribute>
     </definition>
 

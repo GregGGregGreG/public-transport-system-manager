@@ -24,4 +24,13 @@ public interface RouteService {
      * @return  The found list route entry.
      */
     List<Route> findAll();
+
+    /**
+     * Finds by number route entry.
+     *
+     * @return  The found route entry.
+     */
+    Route findByNumber(String number);
+
+
 }

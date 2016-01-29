@@ -7,6 +7,7 @@ import ua.telesens.ostapenko.transportmanager.persistence.model.Station;
 import ua.telesens.ostapenko.transportmanager.persistence.repository.StationRepository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * @author root
@@ -24,5 +25,14 @@ public class DefaultStationService implements StationService {
     public Station add(Station added) {
         log.debug("Adding a new station entry with information: {}", added);
         return stationRepository.save(added);
+    }
+
+    @Override
+    public List<Station> findAll() {
+        log.debug("Find all station");
+
+        List<Station> found = stationRepository.findAll();
+        log.debug("Found list station entry: {}", found);
+        return stationRepository.findAll();
     }
 }

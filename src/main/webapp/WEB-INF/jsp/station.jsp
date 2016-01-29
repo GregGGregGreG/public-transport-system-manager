@@ -1,23 +1,30 @@
-<h2 class="sub-header">Route list</h2>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+<h2 class="sub-header">Station list</h2>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Basses</th>
-            <th>Stations</th>
-            <th>Avg passengers</th>
+            <th><spring:message code="label.user.stations.page.columnName"/></th>
+            <th><spring:message code="label.user.stations.page.columnAvgCountPassenger"/></th>
+            <th><spring:message code="label.user.stations.page.columnCountRace"/></th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>232</td>
-            <td>5</td>
-            <td>8</td>
-            <td>300</td>
-        </tr>
+        <c:forEach var="station" items="${stations}">
+            <tr>
+                <td>
+                    <c:out value="${station.name}"/>
+                </td>
+                <td>
+                    <c:out value="${station.avgCountPassenger}"/>
+                </td>
+                <td>
+                    <c:out value="${station.countRace}"/>
+                </td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
 </div>

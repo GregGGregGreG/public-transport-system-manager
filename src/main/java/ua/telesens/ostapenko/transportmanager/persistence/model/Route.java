@@ -4,11 +4,10 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.experimental.Builder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrePersist;
+import javax.persistence.*;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author root
@@ -34,7 +33,7 @@ public class Route extends AbstractEntity {
     private LocalTime ending;
 
     @Column(nullable = false)
-    private LocalTime len;
+    private LocalTime duration;
 
     @Column(nullable = false)
     private double price;
@@ -42,8 +41,18 @@ public class Route extends AbstractEntity {
     @Column(nullable = false)
     private int races;
 
+    @Column(nullable = false)
+    private int avgTransport;
+
     @Column(name = "created_date", nullable = false)
     private Date createdDate;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable
+    private List<Station> stations;
+
+    public Route() {
+    }
 
     @PrePersist
     public void prePersist() {
@@ -51,19 +60,15 @@ public class Route extends AbstractEntity {
     }
 
     @Builder
-    private Route(String number,
-                 Boolean circular,
-                 LocalTime starting,
-                 LocalTime ending,
-                 LocalTime len,
-                 double price,
-                 int races) {
+    public Route(String number, Boolean circular, LocalTime starting, LocalTime ending, LocalTime duration, double price, int races, int avgTransport, List<Station> stations) {
         this.number = number;
         this.circular = circular;
         this.starting = starting;
         this.ending = ending;
-        this.len = len;
+        this.duration = duration;
         this.price = price;
         this.races = races;
+        this.avgTransport = avgTransport;
+        this.stations = stations;
     }
 }

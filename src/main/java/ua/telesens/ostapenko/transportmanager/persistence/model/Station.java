@@ -2,11 +2,11 @@ package ua.telesens.ostapenko.transportmanager.persistence.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.experimental.Builder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrePersist;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author root
@@ -17,20 +17,32 @@ import java.util.Date;
 @Entity
 public class Station extends AbstractEntity {
 
-    private static final int MIN_LEN_NAME = 100;
+    public static final int MAX_LEN_NAME = 100;
+    public static final int MAX_AVG_PASSENGER = 1000;
 
-    @Column(nullable = false, unique = true, length = MIN_LEN_NAME)
-    private  String name;
+    @Column(nullable = false, unique = true, length = MAX_LEN_NAME)
+    private String name;
+
+    @Column(nullable = false, length = MAX_AVG_PASSENGER)
+    private int avgCountPassenger;
 
     @Column(name = "created_date", nullable = false)
     private Date createdDate;
+
+    @ManyToMany(mappedBy = "stations")
+    private List<Route> routes;
+
+    public Station() {
+    }
 
     @PrePersist
     public void prePersist() {
         createdDate = new Date();
     }
 
-    public Station(String name) {
+    @Builder
+    public Station(String name, int avgCountPassenger) {
         this.name = name;
+        this.avgCountPassenger = avgCountPassenger;
     }
 }

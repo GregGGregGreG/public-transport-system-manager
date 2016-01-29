@@ -36,6 +36,4 @@ public class Role extends AbstractEntity {
     public void prePersist() {
         createdDate = new Date();
     }
-
-
 }

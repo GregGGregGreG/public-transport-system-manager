@@ -32,7 +32,16 @@ public class DefaultRouteService implements RouteService {
         log.debug("Find all route");
 
         List<Route> found = routeRepository.findAll();
-        log.debug("Found list task entry: {}", found);
+        log.debug("Found list route entry: {}", found);
         return routeRepository.findAll();
+    }
+
+    @Override
+    public Route findByNumber(String number) {
+        log.debug("Find by number  route");
+
+        Route found = routeRepository.findByNumber(number);
+        log.debug("Found  route entry: {}", found);
+        return found;
     }
 }

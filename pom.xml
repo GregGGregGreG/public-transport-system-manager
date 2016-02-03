@@ -9,19 +9,43 @@
     <packaging>war</packaging>
     <name>Public transport system manager</name>
     <description>Public transport system manager used spring and hibernate</description>
-    <version>0.1</version>
+    <version>0.3</version>
 
     <properties>
         <!--Java Version-->
-
         <jdk-version>1.8</jdk-version>
         <!--Maven Plugin-->
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
         <!-- Io Spring platform -->
         <io.spring.platform-version>1.1.3.RELEASE</io.spring.platform-version>
+
+        <!-- DEPENDENCIES -->
         <!-- Lombok -->
         <!-- Logging Dependencies -->
         <!-- Testing Dependencies -->
+        <!-- Commons-logging -->
+        <!-- Apache Tiles -->
+        <!-- Spring Core -->
+        <!-- Spring MVC -->
+        <cglib-version>2.2.2</cglib-version>
+        <!-- Spring Security -->
+        <!-- Spring Data JPA -->
+        <!-- Hibernate -->
+        <org.hibernate>5.0.7.Final</org.hibernate>
+        <org.hibernate.hibernate-java8>5.0.0.Final</org.hibernate.hibernate-java8>
+        <!-- JSR 303 with Hibernate Validator -->
+        <asm-version>3.3.1</asm-version>
+        <org.glassfish.web.el-impl>2.2</org.glassfish.web.el-impl>
+        <!-- Servlet API 3.0.1 -->
+        <!-- Commons Database Connection Pool-->
+        <!-- HSQL Database -->
+        <!-- POSTGRESQL Database -->
+        <!-- Jackson JSON Processor -->
+        <!-- Gzip filter -->
+        <org.mortbay.jetty-util-version>6.1.25</org.mortbay.jetty-util-version>
+        <!-- Project Build Source Encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.postgresql-version>9.4-1201-jdbc4</org.postgresql-version>
 
         <!-- BUILD-->
         <!-- Maven Plugin-->
@@ -31,24 +55,6 @@
         <!-- Jetty Server-->
         <org.eclipse.jetty-server-version>9.2.2.v20140723</org.eclipse.jetty-server-version>
         <!-- /BUILD -->
-        <!-- DEPENDENCIES -->
-        <!-- Commons-logging -->
-        <!-- Apache Tiles -->
-        <!-- Spring Core -->
-        <!-- Spring MVC -->
-        <cglib-version>2.2.2</cglib-version>
-        <!-- Spring Security -->
-        <!-- Servlet API 3.0.1 -->
-        <!-- Project Build Source Encoding -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.postgresql-version>9.4-1201-jdbc4</org.postgresql-version>
-
-        <!-- Gzip filter -->
-        <org.mortbay.jetty-util-version>6.1.25</org.mortbay.jetty-util-version>
-
-        <asm-version>3.3.1</asm-version>
-
-
         <!-- Project Build Source Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--Project Reporting Output Encoding -->
@@ -106,17 +112,6 @@
             <artifactId>spring-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-java8</artifactId>
-            <version>5.0.0.Final</version>
-        </dependency>
-
-
-        <!--//////////////////////-->
         <!--Commons-logging-->
         <dependency>
             <groupId>commons-logging</groupId>
@@ -181,26 +176,22 @@
             <artifactId>spring-data-jpa</artifactId>
         </dependency>
         <!-- Hibernate -->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-core</artifactId>-->
-            <!--<version></version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-entitymanager</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.0.7.Final</version>
+            <version>${org.hibernate}</version>
         </dependency>
-
         <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.0.7.Final</version>
+            <version>${org.hibernate}</version>
+        </dependency>
+        <!--Java8DateTimeTypeContributor-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-java8</artifactId>
+            <version>${org.hibernate.hibernate-java8}</version>
         </dependency>
         <!-- JSR 303 with Hibernate Validator -->
         <dependency>
@@ -221,9 +212,8 @@
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>el-impl</artifactId>
-            <version>2.2</version>
+            <version>${org.glassfish.web.el-impl}</version>
         </dependency>
-
         <!-- Servlet API 3.0.1 -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -277,11 +267,11 @@
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>javax.transaction-api</artifactId>
-            <version>1.2</version>
+            <!--<version>1.2</version>-->
         </dependency>
     </dependencies>
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

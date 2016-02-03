@@ -1,5 +1,6 @@
 package ua.telesens.ostapenko.transportmanager.controller;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
@@ -9,6 +10,7 @@ import java.util.Objects;
  * @since 01.12.15
  */
 @Slf4j
+@Getter
 public enum EnumView {
 
     ERROR("error", "/error"),
@@ -28,14 +30,6 @@ public enum EnumView {
     EnumView(String name, String path) {
         this.name = name;
         this.path = path;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPath() {
-        return path;
     }
 
     public static String redirectTo(EnumView redirect) {
